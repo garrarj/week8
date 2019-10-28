@@ -5,7 +5,6 @@
 * Responsive Images
 * Forms
 * Attribute Selectors
-* Media Queries properties
 
 ---
 [Git Commands Cheatsheet](https://github.github.com/training-kit/downloads/github-git-cheat-sheet.pdf)
@@ -43,7 +42,6 @@
 * [CSS Border-radius video](https://www.youtube.com/embed/uUX0RJLtNog)
 * [CSS Viewport Unit video](https://www.youtube.com/embed/r_RWkm1-dvw)
 * [Other Media Queries video](https://www.youtube.com/embed/4_ImMpDexMg)
-* []()
 
 
 

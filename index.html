@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="styles/default.css" rel="stylesheet">
-    <title>MAD9013 - Week *</title>
+    <link href="styles/styles.css" rel="stylesheet">
+    <title>MAD9013 - Week 8</title>
 </head>
 <body>
      <!--
         This week we will discussing:
-        - Forms
-        - Attribute Selection
         - Responsive Images
+        - Styling Forms
+        - Attribute Selection
     -->
 
     <header>
@@ -27,19 +28,58 @@
     </header>
     <main>
         <section>
-            <h2>Heading</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit a excepturi odit molestiae maiores praesentium illo eius nihil aut omnis. Impedit dolor debitis repellat quisquam minima unde ab perferendis, quidem suscipit possimus modi voluptatum tenetur doloremque! Fugiat, quam vel impedit quos voluptate qui molestias cupiditate similique voluptates quidem nemo provident.</p>
+            <h2>Different ways to display images in HTML</h2>
+            <!-- 
+                There are three main ways to display images in pure HTML: 
+            -->
+
+
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident veritatis libero officia iure repudiandae facere at cumque, explicabo recusandae nostrum magni voluptas quaerat dolorem commodi velit ea eum nam deleniti quidem assumenda. Harum repellendus similique corporis sint accusamus ab, perferendis dolore explicabo magni ullam hic totam, possimus vel nihil animi. Hic, mollitia in voluptate pariatur ratione error quam delectus accusamus eaque provident, voluptatum sit. Illum placeat itaque possimus blanditiis, sapiente dolorum dicta ad nisi aspernatur neque vitae eum quidem, quas harum rem necessitatibus. Unde eius similique nam ipsam, libero rerum vero esse recusandae incidunt quam porro voluptatem harum amet voluptatibus. Explicabo, qui ea corporis consequatur optio consequuntur quas cupiditate ipsa fuga. Et laborum ipsa harum rem non temporibus commodi minus iure eos quos voluptates, magni architecto placeat ex quaerat veritatis, illum magnam dolorem consectetur quasi nihil reiciendis. Nulla reprehenderit quam, beatae adipisci ea atque velit numquam in rem sapiente at, dolor voluptas quo voluptates accusantium necessitatibus hic sunt libero facilis, ut eligendi quia quae? Incidunt consequatur cum quasi facilis iste? Libero velit natus aut, error doloremque debitis culpa tempora ullam sed asperiores, nam maxime rerum magnam nisi dolorum quaerat? Animi praesentium omnis quidem quod voluptates! Vitae sit quibusdam quod dicta.</p>
         </section>
-        <section>
-            <h2>Heading</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit a excepturi odit molestiae maiores praesentium illo eius nihil aut omnis. Impedit dolor debitis repellat quisquam minima unde ab perferendis, quidem suscipit possimus modi voluptatum tenetur doloremque! Fugiat, quam vel impedit quos voluptate qui molestias cupiditate similique voluptates quidem nemo provident.</p>
-        </section>
-        <section>
-            <h2>Heading</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit a excepturi odit molestiae maiores praesentium illo eius nihil aut omnis. Impedit dolor debitis repellat quisquam minima unde ab perferendis, quidem suscipit possimus modi voluptatum tenetur doloremque! Fugiat, quam vel impedit quos voluptate qui molestias cupiditate similique voluptates quidem nemo provident.</p></section>
-        <section>
-            <h2>Heading</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit a excepturi odit molestiae maiores praesentium illo eius nihil aut omnis. Impedit dolor debitis repellat quisquam minima unde ab perferendis, quidem suscipit possimus modi voluptatum tenetur doloremque! Fugiat, quam vel impedit quos voluptate qui molestias cupiditate similique voluptates quidem nemo provident.</p>
+        <section class="form-container">
+            <h2>Styling form elements</h2>
+            <!-- 
+                Forms are often the most important content on websites because they allow for users to make purchases, submit valuable data, become active in a community, etc. As a result a poorly designed or optimised form can result in users aborting midway through the submission progress.
+
+                Each form needs:
+                    -
+                
+                Some common form elements include:
+                    - text inputs
+                    - text areas
+                    - drop down lists
+                    - radio buttons
+                    - check boxes
+                    - submit buttons
+                
+                Best practices for accessibility dictate that form elements be paired with labels to better assist screen readers. In order to pair an imput with a label, include a 'for' attribute in the label and have that match the 'id' attribute of the input
+            -->
+
+
+            <form class="form-container">
+
+                <!-- The 'required' attribute will force the user to fill in this field before submitting-->
+               
+
+                <!-- The 'pattern' attribute allows for some validation of the content. Research "Regular Expressions" to learn more about this. In this example our simple regular expression dictates that only three numerical digits between 0 and 9 will be accepted as valid -->
+               
+
+                <!-- <fieldset> tags will create a line around the nested inputs
+                    the <legend> tags acts as a label for the fieldset
+                    Radio buttons only allow for one to be selected at a time -->
+                
+
+                <!-- textareas are meant to hold longer strings. They can be resized by the user -->
+                
+
+                <!-- The <select> tag allows you to create a drop-down menu. 
+                    Adding nested <option> will populate the drop down
+                    Adding the 'selected' attribute to an <option> tag will pre-select it for the user -->
+               
+
+                <!-- Checkboxes allow for a 'checked' attribute -->
+                
+            </form>
         </section>
     </main>
     <footer>

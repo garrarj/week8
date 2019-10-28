@@ -1,0 +1,17 @@
+select, option, input, button, textarea, fieldset{
+    padding: 0.4rem 1rem;
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+label, legend{
+    font-size: 0.8rem;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    width: 50%;
+}
+
