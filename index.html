@@ -30,9 +30,44 @@
         <section>
             <h2>Different ways to display images in HTML</h2>
             <!-- 
-                There are three main ways to display images in pure HTML: 
+                There are three main ways to display images in pure HTML: the <img> tag, the <figure> tag, and the <picture> tag
+                    - <img> tags were the first to be introduced
+                    - <figure> tags allow for content to be semantically related
+                    - <picture> tags allow for semantic relationships, reloading images based on media queries, and fallbacks 
             -->
 
+            <img src="img/img.jpg" alt="a blue image" max-width="800px">
+
+            <figure>
+                <img src="img/figure.jpg" alt="a red image">
+                <figcaption>a red image</figcaption>
+            </figure>
+
+            <picture>
+                <source srcset="img/1000x300.jpg" media="(min-width:1200px)" alt="1000px wide image" type="image/jpg" />
+                <source srcset="img/800x300.jpg" media="(min-width:1000px)" alt="800px wide image" type="image/jpg" />
+                <source srcset="img/600x300.jpg" media="(min-width:800px)" alt="600px wide image" type="image/jpg" />
+                <source srcset="img/400x300.jpg" media="(min-width:600px)" alt="400px wide image" type="image/jpg" />
+                <img src="http://lorempixel.com/200/200/" alt="fallback image"/>
+            </picture>
+
+
+            <!-- 
+            An alternative method for displaying a set of images at different breakpoints
+
+            <img src="http://lorempixel.com/200/200/"
+                srcset="
+                    img/1000x300.jpg 1200w,
+                    img/800x300.jpg 1000w,
+                    img/600x300.jpg 800w,
+                    img/400x300.jpg 600w"
+                sizes="
+                    (min-width:1200px) 90vw,
+                    (min-width:1000px) 75vw,
+                    (min-width:800px) 60vw,
+                    (min-width:600px) 45vw"
+                alt="placeholder images for section one"> 
+            -->
 
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident veritatis libero officia iure repudiandae facere at cumque, explicabo recusandae nostrum magni voluptas quaerat dolorem commodi velit ea eum nam deleniti quidem assumenda. Harum repellendus similique corporis sint accusamus ab, perferendis dolore explicabo magni ullam hic totam, possimus vel nihil animi. Hic, mollitia in voluptate pariatur ratione error quam delectus accusamus eaque provident, voluptatum sit. Illum placeat itaque possimus blanditiis, sapiente dolorum dicta ad nisi aspernatur neque vitae eum quidem, quas harum rem necessitatibus. Unde eius similique nam ipsam, libero rerum vero esse recusandae incidunt quam porro voluptatem harum amet voluptatibus. Explicabo, qui ea corporis consequatur optio consequuntur quas cupiditate ipsa fuga. Et laborum ipsa harum rem non temporibus commodi minus iure eos quos voluptates, magni architecto placeat ex quaerat veritatis, illum magnam dolorem consectetur quasi nihil reiciendis. Nulla reprehenderit quam, beatae adipisci ea atque velit numquam in rem sapiente at, dolor voluptas quo voluptates accusantium necessitatibus hic sunt libero facilis, ut eligendi quia quae? Incidunt consequatur cum quasi facilis iste? Libero velit natus aut, error doloremque debitis culpa tempora ullam sed asperiores, nam maxime rerum magnam nisi dolorum quaerat? Animi praesentium omnis quidem quod voluptates! Vitae sit quibusdam quod dicta.</p>
         </section>
@@ -42,7 +77,9 @@
                 Forms are often the most important content on websites because they allow for users to make purchases, submit valuable data, become active in a community, etc. As a result a poorly designed or optimised form can result in users aborting midway through the submission progress.
 
                 Each form needs:
-                    -
+                    - A unique name
+                    - An action attribute (detailing where the form data will be sent)
+                    - a method attribute ('post' or 'get' detailing how the data will be bundled)
                 
                 Some common form elements include:
                     - text inputs
@@ -58,27 +95,81 @@
 
             <form class="form-container">
 
+                <div class="form-field-short">
+                    <label for="fullName">Name</label>
+                    <input type="text" id="fullName" name="fullName">
+                </div>
+
                 <!-- The 'required' attribute will force the user to fill in this field before submitting-->
-               
+                <div class="form-field-short">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
 
                 <!-- The 'pattern' attribute allows for some validation of the content. Research "Regular Expressions" to learn more about this. In this example our simple regular expression dictates that only three numerical digits between 0 and 9 will be accepted as valid -->
-               
+                <div class="form-field-short">
+                    <label for="areaCode">Area code</label>
+                    <input type="text" id="areaCode" name="areaCode" pattern="[0-9]{3}" placeholder="Must be 3 digits">
+                </div>
 
                 <!-- <fieldset> tags will create a line around the nested inputs
                     the <legend> tags acts as a label for the fieldset
                     Radio buttons only allow for one to be selected at a time -->
-                
+                <div class="form-field">
+                    <fieldset>
+                        <legend>What is your favourite Die Hard?</legend>
+                        <div>
+                            <label for="DieHard1">Die Hard</label>
+                            <input type="radio" name="DieHardPref" id="DieHard1" value="Die Hard" />
+                        </div>
+                        <div>
+                            <label for="DieHard2">Die Hard 2: Die Harder</label>
+                            <input type="radio" name="DieHardPref" id="DieHard2" value="Die Hard 2: Die Harder" />
+                        </div>
+                        <div>
+                            <label for="DieHard3">Die Hard with a Vengeance</label>
+                            <input type="radio" name="DieHardPref" id="DieHard3" value="Die Hard with a Vengeance" />
+                        </div>
+                    </fieldset>
+                </div>
 
                 <!-- textareas are meant to hold longer strings. They can be resized by the user -->
-                
+                <div class="form-field">
+                    <label for="OnlyThreeDieHards">Explain why there are only three Die Hard movies</label>
+                    <textarea name="OnlyThreeDieHards"></textarea>
+                </div>
 
                 <!-- The <select> tag allows you to create a drop-down menu. 
                     Adding nested <option> will populate the drop down
                     Adding the 'selected' attribute to an <option> tag will pre-select it for the user -->
-               
+                <div class="form-field">
+                    <label for="province">Select the province where Bruce McClane shot down Simon Gruber's helicopter in Die Hard with a Vengeance</label>
+                    <select id="province" name="province">
+                        <option value="British Columbia">British Columbia</option>
+                        <option value="Alberta">Alberta</option>
+                        <option value="Saskatchewan">Saskatchewan</option>
+                        <option value="Manitoba">Manitoba</option>
+                        <option value="Ontario">Ontario</option>
+                        <option value="Quebec" selected>Quebec</option>
+                        <option value="New Brunswick">New Brunswick</option>
+                        <option value="Nova Scotia">Nova Scotia</option>
+                        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                        <option value="Prince Edward Island">Prince Edward Island</option>
+                        <option value="Yukon">Yukon</option>
+                        <option value="Northwest Territories">Northwest Territories</option>
+                        <option value="Nunavut">Yukon</option>
+                    </select>
+                </div>
 
                 <!-- Checkboxes allow for a 'checked' attribute -->
-                
+                <div class="form-field-check">
+                    <input type="checkbox" name="dataGrab" id="dataGrab" value="yes" checked />
+                    <label for="dataGrab">Give us all of your data?</label>
+                </div>
+
+                <div class="form-field">
+                    <input type="submit" value="submit" disabled>
+                </div>
             </form>
         </section>
     </main>

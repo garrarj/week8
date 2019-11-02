@@ -15,3 +15,25 @@ label, legend{
     width: 50%;
 }
 
+.form-field{
+    margin: 1rem 0;
+}
+
+.form-field-short{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-field-short label{
+    flex-basis: 9rem;
+}
+
+input:invalid{
+    border: 2px solid red;
+}
+
+input[required]{
+    border: 1px solid blue;
+}
